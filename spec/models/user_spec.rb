@@ -34,8 +34,7 @@ RSpec.describe User, type: :model do
       describe 'user attribute validation' do
         it { is_expected.to validate_presence_of(:email) }
         it { is_expected.to validate_confirmation_of(:password) }
-        it {is_expected.to  validate_presence_of(:phone_number) }
-
+        
         context 'should not be invalid email address' do
           emails = ['ppp@ qr.com', '@example.com', 'trial test @gmail.com',
                       'linda@podii', 'yyy@.x. .x', 'zzz@.z']
