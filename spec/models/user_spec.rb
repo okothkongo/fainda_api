@@ -23,18 +23,16 @@ RSpec.describe User, type: :model do
         it { is_expected.to have_db_column :unconfirmed_email }
         it { is_expected.to have_db_column :first_name }
         it { is_expected.to have_db_column :last_name }
-        it { is_expected.to have_db_column :phone_number }
-        it { is_expected.to have_db_column :country }
-        it { is_expected.to have_db_column :location }
+        it { is_expected.to have_db_column :phone_number }      
         it { is_expected.to have_db_column :email }
         it { is_expected.to have_db_column :tokens }
         it { is_expected.to have_db_column :created_at }
-        it { is_expected.to have_db_column :updated_at }      
+        it { is_expected.to have_db_column :updated_at }
       end
       describe 'user attribute validation' do
         it { is_expected.to validate_presence_of(:email) }
         it { is_expected.to validate_confirmation_of(:password) }
-        
+
         context 'should not be invalid email address' do
           emails = ['ppp@ qr.com', '@example.com', 'trial test @gmail.com',
                       'linda@podii', 'yyy@.x. .x', 'zzz@.z']
