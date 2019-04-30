@@ -14,7 +14,7 @@ jobs:
           POSTGRES_USER: fainda_api
           POSTGRES_DB: fainda_api_test
           POSTGRES_PASSWORD: ""
-    step:
+    steps:
       - checkout
         # Restore Cached Dependencies
       - type: cache-restore
