@@ -41,6 +41,13 @@ jobs:
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m      
       # Setup the database
       - run: bundle exec rake db:setup      
+      #run tests
+      - run:   |
+            bundle exec rspec --profile 10 \
+                              --format RspecJunitFormatter \
+                              --out test_results/rspec.xml \
+                              --format progress \
+                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
 
 
 
