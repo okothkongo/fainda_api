@@ -34,14 +34,7 @@ jobs:
       - run: cp .sample.env .env
       # Setup the database
       - run: bundle exec rake db:setup
-      # Run the tests
-      - run: |
-            bundle exec rspec --profile 10 \
-                              --format RspecJunitFormatter \
-                              --out test_results/rspec.xml \
-                              --format progress \
-                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
-
+      
 
 
 
