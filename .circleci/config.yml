@@ -3,7 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.6.0-node
-        environment:                
+        environment:  
+          BUNDLER_VERSION: 2.0.1              
           PGHOST: localhost
           PGUSER: fainda_api
           RAILS_ENV: test
@@ -13,6 +14,16 @@ jobs:
           POSTGRES_USER: fainda_api
           POSTGRES_DB: fainda_api_test
           POSTGRES_PASSWORD: ""
+        run:
+          name: install dependencies
+          command: |
+            sudo gem update --system
+            sudo gem install rspec
+            sudo gem uninstall bundler
+            sudo rm /usr/local/bin/bundle
+            sudo gem install bundler
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+          
     steps:
       - checkout
         # Restore Cached Dependencies
