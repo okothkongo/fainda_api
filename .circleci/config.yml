@@ -3,7 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.6.0-node
-        environment:        
+        environment:   
+          BUNDLER_VERSION: 2.0.1     
           PGHOST: localhost
           PGUSER: fainda_api
           RAILS_ENV: test
