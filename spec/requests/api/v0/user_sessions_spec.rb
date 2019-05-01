@@ -39,7 +39,7 @@ RSpec.describe 'Sessions', type: :request do
       expect(response.status).to eq 401
     end
   end
-  it 'logouts' do
+  it 'logs user out' do
     post '/api/v0/User/auth/sign_in', params: {
       email: user.email, password: user.password
     }, headers: headers
