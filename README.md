@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an api for an app that connects buyers and seller by alllowing seller to advertise their products.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Requests
+ | purpose                     | Path                                                       | Methods | Params                                                                      |
+|-----------------------------|------------------------------------------------------------|---------|-----------------------------------------------------------------------------|
+| user signup or registration | https://fainda-api.herokuapp.com//api/v0/User/auth         | POST    | first_name, last_name, phone_number, email, password, password_confirmation |
+| user sign in                | https://fainda-api.herokuapp.com//api/v0/User/auth         | POST    | email, password                                                             |
+| user sign out               | https://fainda-api.herokuapp.com/api/v0/User/auth/sign_out | DELETE  | You must pass in uid,client, and access-token in the request headers.       |
+  
