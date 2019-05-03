@@ -2,11 +2,11 @@
 
 FactoryBot.define do
   factory :advertisement do
-    location { 'MyString' }
-    category { 'MyString' }
-    type { '' }
-    model { 'MyString' }
-    price { 1 }
+    location { 'Kisumu' }
+    category { 'Electronic' }
+    type { 'Phone' }
+    model { 'Samsung' }
+    price { 10_000 }
     user { nil }
   end
 end
