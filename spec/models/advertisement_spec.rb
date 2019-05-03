@@ -3,6 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Advertisement, type: :model do
+  it 'should have valid Factory' do
+    expect(FactoryBot.create(:advertisement)).to be_valid
+  end
   describe 'advertisments table' do
     it { is_expected.to have_db_column :location }
     it { is_expected.to have_db_column :category }
