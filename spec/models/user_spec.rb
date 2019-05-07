@@ -50,4 +50,7 @@ RSpec.describe User, type: :model do
       end
     end
   end
+  describe 'advert association' do
+    it { is_expected.to have_many(:advertisements).dependent(:destroy) }
+  end
 end
