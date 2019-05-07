@@ -12,7 +12,7 @@ RSpec.describe 'Adverstiment', type: :request do
       expect(response.status).to eq 201
     end
   end
-  describe '/api/v0/advertisements' do
+  describe ' GET/api/v0/advertisements' do
     before do
       FactoryBot.create(:advertisement)
       get '/api/v0/advertisements'
