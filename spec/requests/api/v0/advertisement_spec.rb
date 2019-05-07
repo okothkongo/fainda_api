@@ -54,4 +54,13 @@ RSpec.describe 'Adverstiment', type: :request do
       end
     end
   end
+  describe 'DELETE /api/v0/advertisement/:id' do
+    before do
+      @advertisement_id = FactoryBot.create(:advertisement).id
+      delete "/api/v0/advertisements/#{@advertisement_id}"
+    end
+    it 'returns status code 204' do
+      expect(response).to have_http_status(204)
+    end
+  end
 end

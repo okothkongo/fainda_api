@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V0::AdvertisementsController < ApplicationController
-  before_action :set_advertisement, only: %i[show update]
+  before_action :set_advertisement, only: %i[show update destroy]
   def index
     @advertisements = Advertisement.all
     json_response(@advertisements)
@@ -18,6 +18,11 @@ class Api::V0::AdvertisementsController < ApplicationController
 
   def update
     @advertisement.update(advertisement_params)
+    head :no_content
+  end
+
+  def destroy
+    @advertisement.destroy
     head :no_content
   end
 
