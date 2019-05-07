@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class Api::V0::AdvertisementsController < ApplicationController
+  def index
+    @advertisement = Advertisement.all
+    json_response(@advertisement)
+  end
+
   def create
     @advertisement = Advertisement.create!(advertisement_params)
     json_response(@advertisement, :created)
