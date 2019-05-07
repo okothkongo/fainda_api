@@ -12,13 +12,16 @@ RSpec.describe 'Adverstiment', type: :request do
       expect(response.status).to eq 201
     end
   end
-  describe '/api/v0/advertisements' do
+  describe ' GET/api/v0/advertisements' do
     before do
       FactoryBot.create(:advertisement)
       get '/api/v0/advertisements'
     end
     it 'it returns all adverts' do
       expect(response_json).not_to be_empty
+    end
+    it 'returns status code 200' do
+      expect(response).to have_http_status(200)
     end
   end
 end

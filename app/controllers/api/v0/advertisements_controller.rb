@@ -2,8 +2,8 @@
 
 class Api::V0::AdvertisementsController < ApplicationController
   def index
-    @advertisement = Advertisement.all
-    json_response(@advertisement)
+    @advertisements = Advertisement.all
+    json_response(@advertisements)
   end
 
   def create
