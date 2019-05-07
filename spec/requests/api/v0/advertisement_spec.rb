@@ -39,4 +39,19 @@ RSpec.describe 'Adverstiment', type: :request do
       end
     end
   end
+  describe 'POST /api/v0/advertisement/:id' do
+    context 'when the advert exists' do
+      before do
+        @advertisement_id = FactoryBot.create(:advertisement).id
+        put "/api/v0/advertisements/#{@advertisement_id}", params: { location: 'Migori' }
+      end
+
+      it 'updates the record' do
+        expect(response.body).to be_empty
+      end
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
+    end
+  end
 end
