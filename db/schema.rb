@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20_190_502_085_247) do
   create_table 'advertisements', force: :cascade do |t|
     t.string 'location'
     t.string 'category'
-    t.string 'type'
+    t.string 'advert_type'
     t.string 'model'
     t.integer 'price'
     t.bigint 'user_id'

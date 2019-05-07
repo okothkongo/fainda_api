@@ -5,7 +5,7 @@ FactoryBot.define do
     user
     location { 'Kisumu' }
     category { 'Electronic' }
-    type { 'Phone' }
+    advert_type { 'Phone' }
     model { 'Samsung' }
     price { 10_000 }
   end
