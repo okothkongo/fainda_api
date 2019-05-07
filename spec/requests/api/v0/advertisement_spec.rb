@@ -29,12 +29,14 @@ RSpec.describe 'Adverstiment', type: :request do
       @advertisement_id = FactoryBot.create(:advertisement).id
       get "/api/v0/advertisements/#{@advertisement_id}"
     end
-    it 'it returns single advert' do
-      expect(response_json).not_to be_empty
-      expect(response_json['id']).to eq(@advertisement_id)
-    end
-    it 'returns status code 200' do
-      expect(response).to have_http_status(200)
+    context 'when advert exists' do
+      it 'it returns single advert' do
+        expect(response_json).not_to be_empty
+        expect(response_json['id']).to eq(@advertisement_id)
+      end
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
     end
   end
 end
