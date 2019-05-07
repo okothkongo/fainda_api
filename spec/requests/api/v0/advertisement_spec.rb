@@ -20,5 +20,8 @@ RSpec.describe 'Adverstiment', type: :request do
     it 'it returns all adverts' do
       expect(response_json).not_to be_empty
     end
+    it 'returns status code 200' do
+      expect(response).to have_http_status(200)
+    end
   end
 end
