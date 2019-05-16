@@ -29,7 +29,7 @@ class Api::V0::AdvertisementsController < ApplicationController
   private
 
   def advertisement_params
-    params.permit(:user_id, :location, :category, :advert_type, :model, :price)
+    params.permit(:user_id, :location, :category, :advert_type, :model, :price, :picture)
   end
 
   def set_advertisement
